@@ -1,0 +1,1 @@
+sudo cp /var/services/helloWorldService/index.html /var/www/html/

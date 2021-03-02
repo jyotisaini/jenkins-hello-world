@@ -1,0 +1,19 @@
+version: 1.0
+os: Linux
+files:
+  # This section is to define how the files in the artifact shall
+  # be put on the compute instance
+  - source: /
+    destination: /var/services/helloWorldService
+
+steps:
+  # This section is to define the scripts that each step shall run on the instance after file copy.
+  stop:
+    - shell: /var/services/helloWorldService/stop.sh
+      timeoutInSeconds: 300
+  install:
+    - shell: /var/services/helloWorldService/install.sh
+      timeoutInSeconds: 300
+  start:
+    - shell: /var/services/helloWorldService/start.sh
+      timeoutInSeconds: 300
